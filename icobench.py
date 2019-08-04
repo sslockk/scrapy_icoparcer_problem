@@ -73,8 +73,8 @@ class IcobenchSpider(scrapy.Spider):
             print(page)
             print('*' * 30)
             yield response.follow(page, callback=self.ico_page_parse)
-            break
+            
 
-        # yield response.follow(next_page, callback=self.parse)
+        yield response.follow(next_page, callback=self.parse)
 
         print(next_page)
